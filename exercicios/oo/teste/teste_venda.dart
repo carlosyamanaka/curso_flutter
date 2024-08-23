@@ -8,9 +8,9 @@ main() {
 
   Produto sonho = Produto(codigo: 01, nome: "sonho", preco: 110);
   Produto arvore =
-      Produto(codigo: 02, nome: "árvore", preco: 20, desconto: 50.0);
+      Produto(codigo: 02, nome: "árvore", preco: 20, desconto: 0.1);
   Produto geladeira = Produto(
-      codigo: 03, nome: "geladeira frosfree", preco: 35, desconto: 10.0);
+      codigo: 03, nome: "geladeira frosfree", preco: 35, desconto: 0.2);
 
   venda_item item_pedrinho_1 = venda_item(produto: sonho, quantidade: 2);
   venda_item item_pedrinho_2 = venda_item(produto: geladeira);
@@ -27,11 +27,17 @@ main() {
       ),
       itens: <venda_item>[
         venda_item(
+            quantidade: 100,
             produto: Produto(
                 codigo: 04, nome: "Caneta bic", preco: 6.0, desconto: 0.5)),
         venda_item(
             produto: Produto(
                 codigo: 05, nome: "Caderno", preco: 20.0, desconto: 0.3)),
-        venda_item(quantidade: 100, produto: Produto(codigo: 52, nome: "Borracha", preco: 10.1))
+        venda_item(
+            quantidade: 100,
+            produto: Produto(codigo: 52, nome: "Borracha", preco: 10.1))
       ]);
+
+  print("O valor total da venda foi ${venda1.valor_total}");
+  print("O valor total da venda foi ${venda2.valor_total}");
 }

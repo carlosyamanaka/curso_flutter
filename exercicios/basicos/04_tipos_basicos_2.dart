@@ -1,13 +1,13 @@
 void main(List<String> args) {
-  List aprovados = ['Ana', 'Beatriz', 'Carlos'];
+  // List aprovados = ['Ana', 'Beatriz', 'Carlos'];
   // print(aprovados[0]);
   // print(aprovados.length);
 
-  Map telefones = {
-    'Joao': '+55 (11) 54321-5433',
-    'Maria': '+55 (21) 34543-1232',
-    'Pedro': '+55 (43) 23132-2133'
-  };
+  // Map telefones = {
+  //   'Joao': '+55 (11) 54321-5433',
+  //   'Maria': '+55 (21) 34543-1232',
+  //   'Pedro': '+55 (43) 23132-2133'
+  // };
 
   // print(telefones['Joao']);
   // print(telefones.length);
