@@ -69,6 +69,24 @@ class _MyHomePageState extends State<MyHomePage> {
       value: 211.3,
       date: DateTime.now().subtract(Duration(days: 2)),
     ),
+    Transaction(
+      id: 't3',
+      title: 'Antigo',
+      value: 999.1,
+      date: DateTime.now().subtract(Duration(days: 13)),
+    ),
+    Transaction(
+      id: 't4',
+      title: 'Tenis',
+      value: 329.1,
+      date: DateTime.now().subtract(Duration(days: 1)),
+    ),
+    Transaction(
+      id: 't5',
+      title: 'Luz',
+      value: 211.3,
+      date: DateTime.now().subtract(Duration(days: 2)),
+    ),
   ];
 
   List<Transaction> get _recentTransaction {
@@ -113,22 +131,36 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Despesas Pessoais'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.add),
-            onPressed: () => _openTransactionFormModal(context),
-          ),
-        ],
+    final appBar = AppBar(
+      title: Text(
+        'Despesas Pessoais',
+        // textScaler: TextScaler.linear(1.2),
       ),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(Icons.add),
+          onPressed: () => _openTransactionFormModal(context),
+        ),
+      ],
+    );
+    final availabelHeight = MediaQuery.of(context).size.height -
+        appBar.preferredSize.height -
+        MediaQuery.of(context).padding.top;
+
+    return Scaffold(
+      appBar: appBar,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Chart(_recentTransaction),
-            TransactionList(_transactions, _removeTransaction),
+            Container(
+              height: availabelHeight * 0.25,
+              child: Chart(_recentTransaction),
+            ),
+            Container(
+              height: availabelHeight * 0.75,
+              child: TransactionList(_transactions, _removeTransaction),
+            ),
           ],
         ),
       ),
