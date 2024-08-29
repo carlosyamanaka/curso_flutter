@@ -136,6 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
     bool isLandscape = mediaQuery.orientation == Orientation.landscape;
 
     final appBar = AppBar(
+      foregroundColor: Colors.white,
       title: Text(
         'Despesas Pessoais',
         // textScaler: TextScaler.linear(1.2),
